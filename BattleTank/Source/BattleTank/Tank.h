@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "TankAimingComponent.h"
 #include "GameFramework/Actor.h"
+#include "Components/StaticMeshComponent.h"
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
 

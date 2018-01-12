@@ -13,9 +13,6 @@ class BATTLETANK_API UTankAimingComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
-private:
-	UStaticMeshComponent* Barrel;
-
 public:	
 	// Sets default values for this component's properties
 	UTankAimingComponent();
@@ -27,4 +24,5 @@ public:
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
+	UStaticMeshComponent* Barrel;
 };
