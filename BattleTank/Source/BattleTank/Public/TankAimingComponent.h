@@ -18,11 +18,11 @@ public:
 	UTankAimingComponent();
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-	void AimAt(FVector HitLocation);
+	void AimAt(FVector HitLocation, FVector BarrelLocation);
 	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
-	UStaticMeshComponent* Barrel;
+	//UStaticMeshComponent* Barrel;
 };
