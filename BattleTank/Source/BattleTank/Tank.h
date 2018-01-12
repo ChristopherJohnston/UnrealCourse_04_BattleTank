@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "TankAimingComponent.h"
 #include "GameFramework/Actor.h"
-#include "Components/StaticMeshComponent.h"
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
 
@@ -19,14 +18,17 @@ public:
 	ATank();
 	void AimAt(FVector HitLocation);
 
+	UPROPERTY(EditAnywhere, Category = Firing)
+	float LaunchSpeed = 100000.0; // TODO: Find sensible default.
+
+
 	UFUNCTION(BlueprintCallable, Category=Setup)
 	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	UTankAimingComponent* TankAimingComponent = nullptr; 
-	UStaticMeshComponent* Barrel = nullptr;
+	UTankAimingComponent* TankAimingComponent = nullptr;
 
 public:	
 	// Called every frame
