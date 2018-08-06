@@ -1,4 +1,4 @@
-# Unrea Course - BattleTank
+# Unreal Course - BattleTank
 
 This is an open-world head-to-head tank fight with simple AI, terrain and advanced control systems in Unreal 4.
 
