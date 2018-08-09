@@ -1,0 +1,8 @@
+{
+	"files.exclude": {
+		"/Users/chris/Development/Unreal Projects/UnrealCourse/Section_4/UnrealCourse_04_BattleTank/BattleTank/.vscode": true,
+		"/Users/chris/Development/Unreal Projects/UnrealCourse/Section_4/UnrealCourse_04_BattleTank/BattleTank/Content": true,
+		"/Users/chris/Development/Unreal Projects/UnrealCourse/Section_4/UnrealCourse_04_BattleTank/BattleTank/Intermediate": true,
+		"/Users/chris/Development/Unreal Projects/UnrealCourse/Section_4/UnrealCourse_04_BattleTank/BattleTank/Saved": true
+	}
+}
