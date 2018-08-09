@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/NavMovementComponent.h"
-#include "TankTrack.h"
 #include "TankMovementComponent.generated.h"
 
 class UTankTrack;
@@ -23,6 +22,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category=Setup)
 	void IntendMoveForward(float Throw);
+
+	UFUNCTION(BlueprintCallable, Category=Setup)
+	void IntendTurnRight(float Throw);
 
 private:
 	UTankTrack* LeftTrack = nullptr;
