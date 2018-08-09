@@ -37,6 +37,9 @@ protected:
 private:
 	ATank();
 
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	bool FiringEnabled = true;
+
 	// Sets default values for this pawn's properties
 	UPROPERTY(EditDefaultsOnly, Category = Firing)
 	float LaunchSpeed = 4000.0;

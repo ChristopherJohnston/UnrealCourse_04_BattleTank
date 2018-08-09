@@ -37,6 +37,8 @@ void ATank::Fire()
 {
 	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
 
+	if (!FiringEnabled) { return; }
+
 	if (Barrel && isReloaded) {
 
 		// Spawn a projectile at the socket location of the barrel
