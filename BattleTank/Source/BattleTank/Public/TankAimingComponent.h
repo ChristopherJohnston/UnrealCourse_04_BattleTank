@@ -8,6 +8,10 @@
 #include "Components/StaticMeshComponent.h"
 #include "TankAimingComponent.generated.h"
 
+// ENUM for aiming state
+UENUM()
+enum class EFiringState : uint8 { Reloading, Aiming, Locked };
+
 // Forward Declaration
 class UTankBarrel;
 class UTankTurret;
@@ -30,4 +34,7 @@ protected:
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
 	void MoveBarrelTowards(FVector AimDirection);
+
+	UPROPERTY(BlueprintReadOnly, Category="State")
+	EFiringState FiringState = EFiringState::Reloading;
 };
