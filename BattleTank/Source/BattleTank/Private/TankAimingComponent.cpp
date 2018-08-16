@@ -15,18 +15,10 @@ UTankAimingComponent::UTankAimingComponent()
 	// ...
 }
 
-void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
+void UTankAimingComponent::Initialise(UTankBarrel* BarrelReference, UTankTurret* TurretReference)
 {
-	if (BarrelToSet) {
-		Barrel = BarrelToSet;
-	}
-}
-
-void UTankAimingComponent::SetTurretReference(UTankTurret* TurretToSet)
-{
-	if (TurretToSet) {
-		Turret = TurretToSet;
-	}
+	Barrel = BarrelReference;
+	Turret = TurretReference;
 }
 
 void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed) {

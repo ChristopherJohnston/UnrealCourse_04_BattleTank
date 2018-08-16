@@ -40,7 +40,10 @@
 		},
 		{
 			"label": "BattleTank Mac Debug Clean",
-			"group": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
 			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
 			"args": [
 				"BattleTank",
