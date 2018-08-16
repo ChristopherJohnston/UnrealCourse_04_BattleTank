@@ -1,11 +1,13 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright CPJ 2018
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
-#include "Tank.h"
 #include "TankPlayerController.generated.h"
+
+class UTankAimingComponent;
+class ATank;
 
 /**
  * 
@@ -22,6 +24,9 @@ public:
 protected:
 	UFUNCTION(BlueprintCallable, Category="Setup")
 	ATank* GetControlledTank() const;
+
+	UFUNCTION(BlueprintImplementableEvent, Category="Setup")
+	void FoundAimingComponent(UTankAimingComponent* AimingCompRef);
 	
 private:
 	// Return an OUT parameter, true if hit landscampe
