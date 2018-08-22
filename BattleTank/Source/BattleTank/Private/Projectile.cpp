@@ -17,7 +17,6 @@ AProjectile::AProjectile()
 void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void AProjectile::LaunchProjectile(float Speed)
@@ -30,6 +29,5 @@ void AProjectile::LaunchProjectile(float Speed)
 void AProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
