@@ -30,9 +30,12 @@ protected:
 private:
 	ATank();
 
+	virtual void BeginPlay() override;
+
 	UPROPERTY(EditDefaultsOnly, Category="Firing")
 	bool FiringEnabled = true;
 
+	// TODO: Remove once aiming works from AimingComponents
 	// Sets default values for this pawn's properties
 	UPROPERTY(EditDefaultsOnly, Category="Firing")
 	float LaunchSpeed = 4000.0;
