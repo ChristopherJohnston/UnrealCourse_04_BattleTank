@@ -14,10 +14,24 @@ UTankAimingComponent::UTankAimingComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
+void UTankAimingComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) {
+	if ((FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds) {
+		FiringState = EFiringState::Reloading;
+	}
+}
+
 void UTankAimingComponent::Initialise(UTankBarrel* BarrelReference, UTankTurret* TurretReference)
 {
 	Barrel = BarrelReference;
 	Turret = TurretReference;
+}
+
+void UTankAimingComponent::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// Set last fire time so that first fire is after initial reload
+	LastFireTime = FPlatformTime::Seconds();
 }
 
 void UTankAimingComponent::AimAt(FVector HitLocation) {
@@ -47,13 +61,11 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection) {
 
 void UTankAimingComponent::Fire()
 {
-	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
+	if (FiringState != EFiringState::Reloading) {
 
-	if (!FiringEnabled) { return; }
-	if (!ensure(Barrel)) { return; }
-	if (!ensure(ProjectileBlueprint)) { return; }
-
-	if (isReloaded) {
+		if (!FiringEnabled) { return; }
+		if (!ensure(Barrel)) { return; }
+		if (!ensure(ProjectileBlueprint)) { return; }
 
 		// Spawn a projectile at the socket location of the barrel
 		auto Projectile = GetWorld()->SpawnActor<AProjectile>(
