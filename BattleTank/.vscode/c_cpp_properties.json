@@ -5,6 +5,7 @@
             "includePath": [
                 "/Users/Shared/Epic Games/UE_4.20/Engine/Source",
                 "/Users/chris/Development/Unreal Projects/UnrealCourse/Section_4/UnrealCourse_04_BattleTank/BattleTank/Source/BattleTank/Private",
+                "/Users/chris/Development/Unreal Projects/UnrealCourse/Section_4/UnrealCourse_04_BattleTank/BattleTank/Source/BattleTank/Public",
                 "/Users/Shared/Epic Games/UE_4.20/Engine/Source/Runtime",
                 "/Users/Shared/Epic Games/UE_4.20/Engine/Source/Runtime/Engine/Classes",
                 "/Users/Shared/Epic Games/UE_4.20/Engine/Source/Runtime/Engine/Public",
