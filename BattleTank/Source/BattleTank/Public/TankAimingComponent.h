@@ -43,6 +43,8 @@ private:
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 
 	virtual void BeginPlay() override;
+
+	FVector AimDirection;
 	
 	UPROPERTY(EditDefaultsOnly, Category="Firing")
 	bool FiringEnabled = true;
@@ -51,6 +53,7 @@ private:
 	UTankTurret* Turret = nullptr;
 
 	void MoveBarrelTowards(FVector AimDirection);
+	bool IsBarrelMoving();
 
 	// Sets default values for this pawn's properties
 	UPROPERTY(EditDefaultsOnly, Category="Firing")
