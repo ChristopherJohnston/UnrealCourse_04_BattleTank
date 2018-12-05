@@ -52,7 +52,7 @@ private:
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
 
-	void MoveBarrelTowards(FVector AimDirection);
+	void MoveBarrelTowards();
 	bool IsBarrelMoving();
 
 	// Sets default values for this pawn's properties
