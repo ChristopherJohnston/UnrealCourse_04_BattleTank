@@ -20,6 +20,8 @@ void ATankAIController::Tick(float DeltaTime)
 	if (!ensure(PlayerTank)) { return; }
 	if (!ensure(ControlledTank)) { return; }
 
+	// UE_LOG(LogTemp, Warning, TEXT("Player Tank location: %s"), *PlayerTank->GetActorLocation().ToString());
+
 	// Move towards the player
 	MoveToActor(PlayerTank, AcceptanceRadius, true); // TODO: Check radius is in cm
 
@@ -27,6 +29,9 @@ void ATankAIController::Tick(float DeltaTime)
 	auto AimingComponent = ControlledTank->FindComponentByClass<UTankAimingComponent>();
 	if (!ensure(AimingComponent)) { return; }
 	AimingComponent->AimAt(PlayerTank->GetActorLocation());
-	AimingComponent->Fire();
+
+	if (AimingComponent->GetFiringState() == EFiringState::Locked) {
+		AimingComponent->Fire();
+	}
 	
 }
