@@ -10,7 +10,7 @@
 
 // ENUM for aiming state
 UENUM()
-enum class EFiringState : uint8 { Reloading, Aiming, Locked };
+enum class EFiringState : uint8 { Reloading, Aiming, Locked, OutOfAmmo };
 
 // Forward Declaration
 class UTankBarrel;
@@ -33,6 +33,9 @@ public:
 	void Initialise(UTankBarrel* BarrelReference, UTankTurret* TurretReference);
 
 	EFiringState GetFiringState() const;
+
+	UFUNCTION(BlueprintCallable, Category="Firing")
+	int GetRoundsLeft() const;
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category="State")
@@ -67,4 +70,6 @@ private:
 	// Use TSubclassOf<> to limit what can be selected in editor. See: https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TSubclassOf/
 	UPROPERTY(EditDefaultsOnly, Category="Setup")
 	TSubclassOf<AProjectile> ProjectileBlueprint;
+
+	int RoundsLeft = 3;
 };
