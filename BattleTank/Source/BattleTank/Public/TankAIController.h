@@ -19,8 +19,8 @@ public:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
-private:
+protected:
 	// How close can the AI tank get to the player tank
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
-	float AcceptanceRadius = 3000;
+	float AcceptanceRadius = 1000;
 };
