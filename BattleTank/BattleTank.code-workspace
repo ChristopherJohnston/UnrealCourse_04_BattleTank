@@ -4,18 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "/Users/Shared/Epic Games/UE_4.20"
+			"path": "/Users/Shared/Epic Games/UE_4.21"
 		}
 	],
 	"settings": {
-		"typescript.tsc.autoDetect": "off",
-		"files.associations": {
-			"__config": "cpp",
-			"__nullptr": "cpp",
-			"*.modules": "json",
-			"*.target": "json",
-			"*.uproject": "json",
-			"*.uplugin": "json",
-		}
+		"typescript.tsc.autoDetect": "off"
 	}
 }
