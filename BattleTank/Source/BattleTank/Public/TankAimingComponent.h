@@ -57,7 +57,7 @@ private:
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
 
-	void MoveBarrelTowards();
+	void MoveBarrelTowards(FVector TargetAimDirection);
 	bool IsBarrelMoving();
 
 	// Use TSubclassOf<> to limit what can be selected in editor. See: https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TSubclassOf/
