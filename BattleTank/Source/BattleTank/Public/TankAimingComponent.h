@@ -35,7 +35,7 @@ public:
 	EFiringState GetFiringState() const;
 
 	UFUNCTION(BlueprintCallable, Category="Firing")
-	int GetRoundsLeft() const;
+	int32 GetRoundsLeft() const;
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category="State")
@@ -60,16 +60,19 @@ private:
 	void MoveBarrelTowards();
 	bool IsBarrelMoving();
 
-	// Sets default values for this pawn's properties
-	UPROPERTY(EditDefaultsOnly, Category="Firing")
-	float LaunchSpeed = 4000.0;
-
-	float ReloadTimeInSeconds = 3;
-	double LastFireTime = 0;
-
 	// Use TSubclassOf<> to limit what can be selected in editor. See: https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TSubclassOf/
 	UPROPERTY(EditDefaultsOnly, Category="Setup")
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
-	int RoundsLeft = 3;
+	// Sets default values for this pawn's properties
+	UPROPERTY(EditDefaultsOnly, Category="Firing")
+	float LaunchSpeed = 4000.0;
+	
+	UPROPERTY(EditDefaultsOnly, Category="Firing")
+	float ReloadTimeInSeconds = 3;
+
+	UPROPERTY(EditDefaultsOnly, Category="Firing")
+	int32 RoundsLeft = 3;
+	
+	double LastFireTime = 0;
 };
