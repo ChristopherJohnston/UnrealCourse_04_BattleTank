@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Tank.h"
 #include "TankPlayerController.generated.h"
 
 class UTankAimingComponent;
@@ -43,4 +44,9 @@ private:
 
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
+
+	UFUNCTION()
+	void OnTankDeath();
+
+	virtual void SetPawn(APawn* InPawn) override;
 };
