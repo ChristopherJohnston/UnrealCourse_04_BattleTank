@@ -20,6 +20,8 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Health")
 	float GetHealthPercent() const;
 
+	virtual void BeginPlay() override;
+
 	FTankDelegate OnDeath;
 
 private:
